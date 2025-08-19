@@ -2,6 +2,7 @@ import PostCard from "../../components/homeComponents/postCard";
 import img from "../home/postimg.png";
 import vid from "../home/programming.mp4";
 
+// hardcoded
 const user = {
   avatar: img,
   name: "Tonny_G",
