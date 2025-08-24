@@ -1,8 +1,22 @@
 import React from "react";
 
-const PostCard = ({ user, content, image, video, createdAt }) => {
+// Utility to pick a random Tailwind background color
+const randomBg = () => {
+  const colors = [
+    "bg-blue-100",
+    "bg-green-100",
+    "bg-purple-100",
+    "bg-pink-100",
+    "bg-yellow-100",
+    "bg-indigo-100",
+    "bg-teal-100",
+  ];
+  return colors[Math.floor(Math.random() * colors.length)];
+};
+
+const PostCard = ({ user, content, image, video, voice, createdAt }) => {
   return (
-    <div className="max-w-md w-full bg-white rounded-2xl shadow-md p-[4px] m-6 ">
+    <div className="w-full lg:w-[85%] max-w-4xl px-3 md:px-6 space-y-6">
       {/* User Info */}
       <div className="flex items-center mb-3">
         <img
@@ -19,7 +33,9 @@ const PostCard = ({ user, content, image, video, createdAt }) => {
       </div>
 
       {/* Post Content */}
-      {content && <p className="text-gray-700 mb-3">{content}</p>}
+      {content && (
+        <p className="text-gray-700 mb-3 text-center text-base">{content}</p>
+      )}
 
       {/* Image Post */}
       {image && (
@@ -36,6 +52,18 @@ const PostCard = ({ user, content, image, video, createdAt }) => {
           <source src={video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+      )}
+
+      {/* Voice Note / Music */}
+      {voice && (
+        <div
+          className={`w-full h-40 flex items-center justify-center rounded-lg mb-3 shadow ${randomBg()}`}
+        >
+          <audio controls className="w-[90%]">
+            <source src={voice} type="audio/mpeg" />
+            Your browser does not support the audio tag.
+          </audio>
+        </div>
       )}
 
       {/* Actions */}

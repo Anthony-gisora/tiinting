@@ -25,7 +25,7 @@ const LoggedNav = () => {
   }, []);
 
   return (
-    <>
+    <div>
       <nav
         className={`fixed top-0 left-0 w-full flex items-center justify-between transition-all duration-300 z-50 px-6 ${
           scrolled
@@ -127,7 +127,7 @@ const LoggedNav = () => {
         className="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 z-50 transition-all duration-150"
         style={{ width: `${scrollProgress}%` }}
       ></div>
-    </>
+    </div>
   );
 };
 
