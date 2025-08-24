@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import profImg from "../../pages/home/postimg.png";
+import { useNavigate } from "react-router-dom";
 
 const LoggedNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,6 +24,8 @@ const LoggedNav = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -54,20 +57,20 @@ const LoggedNav = () => {
         {/* Navigation Links */}
         <ul className="hidden md:flex space-x-10 font-medium">
           <li>
-            <a
-              href="#home"
+            <button
+              onClick={() => navigate("/")}
               className="hover:text-blue-600 transition-colors duration-200"
             >
               Home
-            </a>
+            </button>
           </li>
           <li>
-            <a
-              href="#create"
+            <button
+              onClick={() => navigate("/create")}
               className="hover:text-blue-600 transition-colors duration-200"
             >
               Create Post
-            </a>
+            </button>
           </li>
           <li>
             <a
