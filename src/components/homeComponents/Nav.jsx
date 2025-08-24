@@ -97,25 +97,25 @@ const LoggedNav = () => {
           <div className="absolute top-16 right-4 w-48 bg-white/90 text-gray-800 shadow-lg rounded-xl md:hidden animate-fadeIn backdrop-blur-md">
             <ul className="flex flex-col space-y-3 p-4 font-medium">
               <li>
-                <a
-                  href="#home"
-                  className="hover:text-blue-600 transition-colors"
+                <button
+                  onClick={() => navigate("/")}
+                  className="hover:text-blue-600 transition-colors duration-200"
                 >
                   Home
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href="#create"
-                  className="hover:text-blue-600 transition-colors"
+                <button
+                  onClick={() => navigate("/create")}
+                  className="hover:text-blue-600 transition-colors duration-200"
                 >
                   Create Post
-                </a>
+                </button>
               </li>
               <li>
                 <a
                   href="#profile"
-                  className="hover:text-blue-600 transition-colors"
+                  className="hover:text-blue-600 transition-colors duration-200"
                 >
                   Profile
                 </a>
